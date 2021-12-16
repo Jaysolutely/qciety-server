@@ -1,0 +1,15 @@
+.main { 
+  background-color: #01bab4;
+  display: grid;
+  justify-content: center;
+  margin-top: 10em;
+}
+
+.text {
+  text-align: center;
+  font-style: bold;
+  font-family: "Monaco";
+  color: white;
+  margin-top: 80px;
+  font-size: 2em;
+}
