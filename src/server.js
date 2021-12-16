@@ -4,8 +4,8 @@ const fastify = require("fastify")({
   logger: true,
   http2: true,
   https: {
-    key: fs.readFileSync("../crt/root_qciety.tech"),
-    cert: fs.readFileSync("../crt/cert_qciety.tech"),
+    key: fs.readFileSync("../crt/qciety.tech.key"),
+    cert: fs.readFileSync("../crt/qciety.tech.cert"),
   },
 });
 
@@ -31,7 +31,7 @@ fastify.get("/*", async (req, res) => {
 
 const start = async () => {
   try {
-    await fastify.listen(8000);
+    await fastify.listen(443);
   } catch (err) {
     fastify.log.error(err);
     process.exit(1);
