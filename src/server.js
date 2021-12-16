@@ -1,12 +1,11 @@
 const fs = require("fs");
-const path = require("path");
 const fastify = require("fastify")({
   logger: true,
-  http2: true,
+  /*  http2: true,
   https: {
     key: fs.readFileSync("../crt/qciety.tech.key"),
     cert: fs.readFileSync("../crt/qciety.tech.cert"),
-  },
+  }, */
 });
 
 const bufferIndexHtml = fs.readFileSync("src/static/index.html");
@@ -31,7 +30,7 @@ fastify.get("/*", async (req, res) => {
 
 const start = async () => {
   try {
-    await fastify.listen(443);
+    await fastify.listen(3000);
   } catch (err) {
     fastify.log.error(err);
     process.exit(1);
